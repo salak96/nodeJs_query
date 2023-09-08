@@ -1,17 +1,17 @@
 [
     {
-      "category": "SUV"
+      "categoryName": "SUV"
     },
     {
-      "category": "MPV"
+      "categoryName": "MPV"
     },
     {
-      "category": "Hatchback"
+      "categoryName": "Hatchback"
     },
     {
-      "category": "City Car"
+      "categoryName": "City Car"
     },
     {
-      "category": "LCGC"
+      "categoryName": "LCGC"
     }
   ]
