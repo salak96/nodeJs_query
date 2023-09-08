@@ -53,13 +53,14 @@ pool.query('SELECT NOW()', (err, res) => {
 })
 ```
 
--  Create file Connection.js 
+-   Create file Connection.js
 
 ```bash
 touch connection.js
 ```
 
-- Isi file Connection.js
+-   Isi file Connection.js
+
 ```bash
 const {Pool} = require('pg');
 
@@ -81,25 +82,27 @@ pool.query('SELECT NOW()', (err, res) => {
 
 module.exports = pool;
 ```
-- Check Koneksi db dengan query tanggal sekarang
+
+-   Check Koneksi db dengan query tanggal sekarang
 
 ```bash
 node connection.js
 ```
 
-- export pool
+-   export pool
+
 ```bash
 
 module.exports = pool;
 ```
 
-- buat file migration
+-   buat file migration
 
 ```bash
 touch migration.js
 ```
 
-- isi file migration buat table
+-   isi file migration buat table
 
 ```bash
 const pool = require('./connection');
@@ -143,8 +146,131 @@ CREATE TABLE "Cars" (
 
 ```
 
-- Jalan migration.js dan cek di dbBwear
+-   Jalan migration.js dan cek di dbBwear
+
 ```bash
 node migration.js
+
+```
+
+-   Buat dumyData Seeder
+
+```bash
+touch seeder.js
+```
+
+-   Buat folder Data menampung datanya
+
+```bash
+mkdir data
+```
+
+-   buat file categories.json & cars.json di folder data dan disi
+
+```bash
+#data categories.json
+[
+    {
+      "category": "SUV"
+    },
+    {
+      "category": "MPV"
+    },
+    {
+      "category": "Hatchback"
+    },
+    {
+      "category": "City Car"
+    },
+    {
+      "category": "LCGC"
+    }
+  ]
+#cars
+[
+    {
+      "carName": "Avanza",
+      "price": 225000,
+      "licensePlate": "B1376HU",
+      "year": 2015,
+      "CategoryId": 2
+    },
+    {
+      "carName": "Xenia",
+      "price": 225000,
+      "licensePlate": "B1421JK",
+      "year": 2015,
+      "CategoryId": 2
+    },
+    {
+      "carName": "Jazz RS",
+      "price": 325000,
+      "licensePlate": "B1421JK",
+      "year": 2017,
+      "CategoryId": 4
+    },
+    {
+      "carName": "Brio",
+      "price": 325000,
+      "licensePlate": "D1322LK",
+      "year": 2018,
+      "CategoryId": 5
+    },
+    {
+      "carName": "Expander",
+      "price": 225000,
+      "licensePlate": "B2134SK",
+      "year": 2020,
+      "CategoryId": 1
+    },
+    {
+      "carName": "All New Avanza",
+      "price": 250000,
+      "licensePlate": "D3145KC",
+      "year": 2021,
+      "CategoryId": 2
+    },
+    {
+      "carName": "Grand New Innova Reborn",
+      "price": 375000,
+      "licensePlate": "B4134SK",
+      "year": 2021,
+      "CategoryId": 2
+    },
+    {
+      "carName": "HRV",
+      "price": 600000,
+      "licensePlate": "D4524MK",
+      "year": 2020,
+      "CategoryId": 2
+    },
+    {
+      "carName": "Ayla",
+      "price": 225000,
+      "licensePlate": "B1353VSA",
+      "year": 2017,
+      "CategoryId": 5
+    },
+    {
+      "carName": "Yaris",
+      "price": 325000,
+      "licensePlate": "D9054LL",
+      "year": 2018,
+      "CategoryId": 3
+    }
+  ]
+```
+
+-   Isi seeder.js
+
+```bash
+const pool = require('./connection');
+const fs  = require('fs');
+
+const categoriesData = fs.readFileSync('./data/categories.json', "utf-8");
+
+console.log(categoriesData);
+
+
 
 ```
