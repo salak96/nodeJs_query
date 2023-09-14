@@ -4,69 +4,69 @@
       "price": 225000,
       "licensePlate": "B1376HU",
       "year": 2015,
-      "CategoryId": 2
+      "categoryId": 2
     },
     {
       "carName": "Xenia",
       "price": 225000,
       "licensePlate": "B1421JK",
       "year": 2015,
-      "CategoryId": 2
+      "categoryId": 2
     },
     {
       "carName": "Jazz RS",
       "price": 325000,
       "licensePlate": "B1421JK",
       "year": 2017,
-      "CategoryId": 4
+      "categoryId": 4
     },
     {
       "carName": "Brio",
       "price": 325000,
       "licensePlate": "D1322LK",
       "year": 2018,
-      "CategoryId": 5
+      "categoryId": 5
     },
     {
       "carName": "Expander",
       "price": 225000,
       "licensePlate": "B2134SK",
       "year": 2020,
-      "CategoryId": 1
+      "categoryId": 1
     },
     {
       "carName": "All New Avanza",
       "price": 250000,
       "licensePlate": "D3145KC",
       "year": 2021,
-      "CategoryId": 2
+      "categoryId": 2
     },
     {
       "carName": "Grand New Innova Reborn",
       "price": 375000,
       "licensePlate": "B4134SK",
       "year": 2021,
-      "CategoryId": 2
+      "categoryId": 2
     },
     {
       "carName": "HRV",
       "price": 600000,
       "licensePlate": "D4524MK",
       "year": 2020,
-      "CategoryId": 2
+      "categoryId": 2
     },
     {
       "carName": "Ayla",
       "price": 225000,
       "licensePlate": "B1353VSA",
       "year": 2017,
-      "CategoryId": 5
+      "categoryId": 5
     },
     {
       "carName": "Yaris",
       "price": 325000,
       "licensePlate": "D9054LL",
       "year": 2018,
-      "CategoryId": 3
+      "categoryId": 3
     }
   ]

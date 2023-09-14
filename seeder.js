@@ -11,18 +11,20 @@ const parseCategories = JSON.parse(categoriesData);
 const carsData = fs.readFileSync('./data/cars.json', "utf-8");
 const parseCars = JSON.parse(carsData);
 console.log(carsData)
-
-const carsValue = parseCars.map((element)=>{
-    //cek dulu table sesuai tidak
-    // return element.carName
-    //array
-    return `
-    ('${element.carName}',
-    '${element.price}',
-    '${element.licensePlate}',
-    '${element.year}',
-    '${element.categoryId}')`
-})
+//cars map
+const carsValue = parseCars
+  .map((element) => {
+    if (element.categoryId !== undefined) {
+      return `('${element.carName}', '${element.price}', '${element.licensePlate}', '${element.year}', '${element.categoryId}')`;
+    } else {
+      console.error('Invalid categoryId:', element);
+      return null; // Skip this entry or handle it differently
+    }
+  })
+  .filter((element) => element !== null) // Filter out entries with invalid categoryId
+  .join(', \n');
+ 
+// //pakai join biar rapi
 
 // console.log(carsValue)
 // //map isi json
