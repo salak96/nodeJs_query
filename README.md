@@ -1,8 +1,10 @@
-<!-- @format -->
-
 ## Belajar Node JS RWID PostgreSql
 
 -   Instal Node JS
+
+## Authors
+
+- [@salak96](https://github.com/salak96)
 
 ```bash
 npm init
@@ -53,7 +55,7 @@ pool.query('SELECT NOW()', (err, res) => {
 })
 ```
 
--   Create file Connection.js
+- Create file Connection.js
 
 ```bash
 touch connection.js
