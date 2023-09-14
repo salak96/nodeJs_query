@@ -22,25 +22,25 @@ npm install pg
 ```bash
 touch connection.js
 ```
-
--   Isi file Connection.js
+- Isi file Connection.js
 
 ```bash
 const {Pool} = require('pg');
-
+# configurasi db user n password
 const pool = new Pool({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'sesuaikan',
-    password: 'sesuaikan',
-    port: 5432, // default port postgres
+    user: 'postgres',  # sesuaikan
+    host: 'localhost',  # sesuaikan
+    database: 'rental_cars', # sesuaikan
+    password: 'root',      # sesuaikan
+    port: 5432,           # default port postgres
+    idleTimeoutMillis:100 # biar tidak pull.end()
 })
-
-pool.query('SELECT NOW()', (err, res) => {
+# cek koneksi tanggal sekarang
+ pool.query('SELECT NOW()', (err, result) => {
     if(err){
         console.log(err);
     }else{
-        console.log(res);
+        console.log(result);
     }
  })
 
