@@ -1,26 +1,33 @@
+const { error } = require('console');
 const pool = require('./connection');
 const fs  = require('fs');
-
+//import data dumy daru data categories.json dan end code utf-8
 const categoriesData = fs.readFileSync('./data/categories.json', "utf-8");
+//convert ke json
 const parseCategories = JSON.parse(categoriesData);
+console.log(parseCategories)
 
-// //console.log(parseCategories); //object
-//  console.log(categoriesData); // objecct as a string
+//map isi json
+const categoriesValue = parseCategories.map((element)=>{
+    //cek dulu table sesuai tidak
+    // return element.categoryName
+    //array
+    return `('${element.categoryName}')`
+}).join(', \n')
+//pakai join biar rapi
 
-const categoriesValue = parseCategories.map(element => {
-    return `("${element.categoryName}")`;
-}).join(', \n');
 console.log(categoriesValue)
-
-pool.query(`
-    INSERT INTO "Categories" ("categoryName") 
-    VALUES ${categoriesValue}
-    `), (error, result) => {
-    if (error) {
-        console.error(error);
-    } else {
-        console.log(result);
-        console.log('table created');
-        pool.end();
-    }
-}
+//buat pool query masukan ke DB table categories
+// pool.query(` 
+// INSERT INTO "Categories"("categoryName") 
+// VALUES ${categoriesValue}
+// `),
+// (err,res)=>{
+//     if(err){
+//         console.log(err)
+//     }else{
+//         console.log("sukses")
+//         console.log("created")
+//         pool.end()
+//     }
+// }

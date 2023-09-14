@@ -1,3 +1,4 @@
+// IMPORT FILE dari connection.js
 const pool = require('./connection');
 
 // create table Categories

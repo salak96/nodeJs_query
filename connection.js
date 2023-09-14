@@ -1,18 +1,18 @@
 const {Pool} = require('pg');
-
+//configurasi db user n password
 const pool = new Pool({
     user: 'postgres',
     host: 'localhost',
-    database: 'rental_mobil2',
+    database: 'rental_cars',
     password: 'root',
     port: 5432, // default port postgres
 })
-
-// pool.query('SELECT NOW()', (err, res) => {
+//cek koneksi tanggal sekarang
+// pool.query('SELECT NOW()', (err, result) => {
 //    if(err){
 //        console.log(err);
 //    }else{
-//        console.log(res);
+//        console.log(result);
 //    }
 // })
 
